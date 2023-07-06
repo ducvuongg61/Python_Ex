@@ -1,0 +1,204 @@
+PYTHON : 
+
+---------------------------------*Variable : 
+ - age : 20 (int)
+ - name : James (String)
+
+ - f đứng vào đầu print chứa dấu nháy đơn '' thì sẽ nhận gọi được cái biến vào print. 
+    Còn dấu nháy đôi "" thì .format() truyền biến trên function vào. Example dưới phần Function.
+    .format(statement) thường được gọi bởi function và tham số nằm chứa trong nó.
+	Ex : print(f'Hello! My name is {name}. I am {age} years old.')
+    Ex : abc_String = f'Hello sir! My name is {name}. I am {age} years old'
+
+ - f''
+
+---------------------------------*If/else :
+ if(Statement) : 
+    condition
+ else : 
+    condition
+
+if statement : 
+    condition
+elif statement :
+    condition
+else :
+    condition
+
+---------------------------------*Comment : 
+"""abc"""
+#abc
+
+
+---------------------------------*Function : 
+def my_function():
+    print("Hello. I'm from VietNam")
+--> calling a function :  my_function() -> output : Hello. I'm from VietNam
+
+def my_function(name , age) : 
+    print()
+----
+Ex : 
+def hello(name): 
+    print(name)
+hello("Jamse")
+
+----
+def hello(name , age) : 
+    print("Hello. My name is {}.I'm {} years old.".format(name , age))
+hello("Jamse" , 30)
+
+----
+def hello(name = "Wolf" , age = 20) : 
+    return "Hello. My name is {}.I'm {} years old.".format(name , age)
+someBody = hello()
+print(someBody)
+
+---------------------------------*List : 
+- 1 list có thể chứa nhiều kiểu dữ liệu khác nhau
+ Ex : list1 = ["Jame" , 20 , True , "Male"] (String , int , boolean , String)
+
+fruit_list = ['Orange' , 'Banana' , 'Lemon']
+print(fruit_list)
+print(len(fruit_list)) : đếm số lượng phần tử trong mảng
+print(fruit_list[-1]) : index vị trí cuối cùng trong mảng
+fruit_list.insert(0, "School") : insert vào mảng ở index 0 với giá trị School
+print(fruit_list)
+del(fruit_list[0]) : xóa phần tử ở index 0
+print(fruit_list) 
+fruit_list.remove("Banana") : remove phần tử chứa giá trị là Banana
+print(fruit_list) 
+fruit_list.pop(1) : xóa phần tử tại index = 1
+fruit_list.pop() : xóa phần tử tại index cuối cùng của list
+print(fruit_list)
+fruit_list.clear() : clear toàn bộ list về rỗng
+print(fruit_list)
+
+
+---------------------------------*Loop : 
+arr = [1,2,3,4,5,6,7,8,9]
+
+for number in arr :
+    if number % 2 == 0 :
+        print(number)
+    else:
+        continue
+
+numberest = 0;
+for x in arr :
+    if x > numberest :
+        numberest = x
+    else :
+        continue
+
+print(numberest)
+
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+  for y in fruits:
+    print(x, y)
+
+range(start, stop, step)
+for x in range(1 , 100 , 2) :
+    print(x)
+
+x = 9 
+while x < 10 : 
+    print("C")
+
+
+---------------------------------*Dictionaries : 
+The same with list
+dog = {"Sala" : 1 , "Mikey" : 2 , "Hinter" : 3}
+
+print(dog)
+print(dog["Sala"])
+dog["Spider"] = 6
+print(dog)
+del(dog["Hinter"])
+print(dog)
+
+
+---------------------------------*Class : 
+class Human :
+
+    def __init__(self , name , age , heigh , gender):
+        self.name = name
+        self.age = age
+        self.heigh = heigh
+        self.gender = gender
+
+    def show(self):
+        print(f'My name is {self.name}. I am {self.age} years old.')
+
+obj_Human = Human("James" , 20 , 170 , "Male")
+obj_Human.show()
+----
+class Animal: 
+    def __init__(self , name):
+        self.name = name
+
+    def setAge(self , age):
+        self.age = age
+    def getAge(self):
+        return self.age
+    
+obj_Animal = Animal("Husky")
+obj_Animal.setAge(5)
+print(obj_Animal.getAge())
+
+---Constructor
+class Addition:
+    answer = 0
+    def __init__(self , f , s):
+        self.f = f
+        self.s = s
+
+    def display(self):
+        print(f'First number : {self.f}')
+        print(f'Second number : {self.s}')
+        print("Addition of two number = " + str(self.answer))
+
+    def caculate(self):
+        self.answer = self.f + self.s
+
+obj_Addition = Addition(10 , 20)
+obj_Addition.caculate()
+obj_Addition.display()
+
+---Destructor : __del__ thường sẽ chạy cuối cùng chương trình 
+class Employee:
+    def __init__(self) -> None:
+        print("Employee created...")
+
+    def __del__(self):
+        print("Desctructor employee...")
+
+def create_Em():
+    print("Making Obj...")
+    obj = Employee()
+    print("function end...")
+    return obj
+    
+print("Calling create_Em() function...")
+obj_Em = create_Em()
+print("Program end...")
+
+
+---------------------------------*Inheritance : 
+class Person:
+    def __init__(self , name , age , gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+    def showInfo(self):
+        print(f'Name : {self.name} , age : {self.age} , gender : {self.gender}')
+        
+class Student(Person):
+    pass
+
+x = Student("James" , 20 , True)
+x.showInfo()

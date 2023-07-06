@@ -1,0 +1,21 @@
+cd ..             : lùi 1 thư mục trong path
+
+Guide Install Django : https://vegastack.com/tutorials/how-to-install-django-on-windows/
+
+Khắc phục lỗi không run được : venv\Scripts\activate
+https://www.vniteach.com/2022/08/06/khac-phuc-loi-activate-ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system/
+
+quit server : Ctrl C
+
+How to run server in vscode:
+Step1: dẫn tới thư mục tổng lớn nhất của project
+Step2: venv\Scripts\activate
+Step3: đến thư mục chứa file manage.py
+Step4: python manage.py runserver
+ --------------------------------------------------
+
+Trong file setting.py :
+    - INSTALLED_APPS[] : add thêm vào thư mục chứa song song với manage.py
+    - TEMPLATES = [] : phần 'DIRS' thì add thêm vào đoạn 
+        [os.path.join(BASE_DIR,'templates')], 
+        Với templates là phần view code mình cần hiển thị của các file html. <import os>
